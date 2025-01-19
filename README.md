@@ -45,4 +45,8 @@ The output for each tweet includes the preprocessed text, the VADER sentiment sc
 
 This script provides a practical, robust, and efficient method for conducting sentiment analysis on tweet data, incorporating essential preprocessing and error handling for improved accuracy and reliability.
 
+OUTPUT OF THE TASK:
+
+![Image](https://github.com/user-attachments/assets/3a22209d-4554-4a32-bcf7-016c4e970a86)
+
 
