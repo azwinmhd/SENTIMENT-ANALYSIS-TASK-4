@@ -1,0 +1,26 @@
+import pandas as pd
+
+# Read the CSV file into a DataFrame
+data = pd.read_csv("C:/Users/HP/Desktop/twitter_analysis.csv")
+
+# Extract the "Text" column as a list
+text_data = data['TWEET CONTENT'].tolist()
+
+# Print the list
+print(text_data)
+# Output: ['This is a great tweet!', 'This is a terrible tweet.', 'This is a neutral tweet.']
+
+# Now you can use text_data with VADER:
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+analyzer = SentimentIntensityAnalyzer()
+
+for text in text_data:
+    scores = analyzer.polarity_scores(text)
+    print(f"Text: '{text}' Scores: {scores}")
+    if scores['compound'] > 0.05:
+        print("Sentiment: Positive")
+    elif scores['compound'] < -0.05:
+        print("Sentiment: Negative")
+    else:
+        print("Sentiment: Neutral")
+    print("-" * 30)
